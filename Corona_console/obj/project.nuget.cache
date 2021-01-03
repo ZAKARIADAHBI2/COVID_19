@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Of96DcyueYeIVbfm1ffuThOMmceBJh1axWAWRqwXH9Pr2spDBmx7Cis9suovQvm5OHiFn+T5RaiP2J77DjSq1A==",
+  "dgSpecHash": "z7vaePKfr0LdK4yxLPN0XMmRqBPXOLA5Ov0NJTdPXfyZJ7ESzQVudHp1bTt6OUvHGespy9ZQakEMtxC/82Uicg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zakaria\\source\\repos\\Corona_console\\Corona_console\\Corona_console.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\Corona_console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zakaria\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -10,9 +10,10 @@ namespace Corona_console
 
         private string NeveauRisque;
 
-        public contacts(string nom, string prenom, string CIN, double PhoneNumber, string adresse, string etatsante, int id) : base(nom, prenom, CIN, PhoneNumber, adresse, etatsante, id)
+        public contacts(int id,string nom, string prenom, string CIN, double PhoneNumber, string adresse, string etatsante) : base(id,nom, prenom, CIN, PhoneNumber, adresse, etatsante)
         {
         }
-       
-       }
+
+        public string NeveauRisque2 { get => NeveauRisque; set => NeveauRisque = value; }
+    }
 }

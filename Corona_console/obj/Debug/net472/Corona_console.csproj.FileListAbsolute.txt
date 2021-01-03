@@ -1,0 +1,11 @@
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.csprojAssemblyReference.cache
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.AssemblyInfoInputs.cache
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.AssemblyInfo.cs
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.csproj.CoreCompileInputs.cache
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\bin\Debug\net472\Corona_console.exe.config
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\bin\Debug\net472\Corona_console.exe
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\bin\Debug\net472\Corona_console.pdb
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\bin\Debug\net472\System.Data.SqlClient.dll
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.csproj.CopyComplete
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.exe
+C:\Users\zakaria\source\repos\ConsoleApp1\Corona_console\obj\Debug\net472\Corona_console.pdb
