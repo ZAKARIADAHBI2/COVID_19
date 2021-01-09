@@ -1,0 +1,12 @@
+C:\Users\zakaria\source\repos\corona_window\corona_window\bin\Debug\corona_window.exe.config
+C:\Users\zakaria\source\repos\corona_window\corona_window\bin\Debug\corona_window.exe
+C:\Users\zakaria\source\repos\corona_window\corona_window\bin\Debug\corona_window.pdb
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.csprojAssemblyReference.cache
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.Form1.resources
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.Properties.Resources.resources
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.Result.resources
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.csproj.GenerateResource.cache
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.csproj.CoreCompileInputs.cache
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.exe
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.pdb
+C:\Users\zakaria\source\repos\corona_window\corona_window\obj\Debug\corona_window.suive.resources
