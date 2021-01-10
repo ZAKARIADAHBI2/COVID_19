@@ -35,12 +35,13 @@ namespace corona_window
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.perid = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.UNINFECTED = new System.Windows.Forms.Button();
+            this.INFECTED = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,12 +98,12 @@ namespace corona_window
             this.textBox1.Size = new System.Drawing.Size(138, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // textBox2
+            // perid
             // 
-            this.textBox2.Location = new System.Drawing.Point(162, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 20);
-            this.textBox2.TabIndex = 7;
+            this.perid.Location = new System.Drawing.Point(162, 113);
+            this.perid.Name = "perid";
+            this.perid.Size = new System.Drawing.Size(138, 20);
+            this.perid.TabIndex = 7;
             // 
             // textBox3
             // 
@@ -118,33 +119,36 @@ namespace corona_window
             this.textBox4.Size = new System.Drawing.Size(138, 20);
             this.textBox4.TabIndex = 9;
             // 
-            // button4
+            // UNINFECTED
             // 
-            this.button4.Location = new System.Drawing.Point(141, 315);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "UNINFECTED";
-            this.button4.UseVisualStyleBackColor = true;
+            this.UNINFECTED.Location = new System.Drawing.Point(162, 315);
+            this.UNINFECTED.Name = "UNINFECTED";
+            this.UNINFECTED.Size = new System.Drawing.Size(75, 23);
+            this.UNINFECTED.TabIndex = 12;
+            this.UNINFECTED.Text = "UNINFECTED";
+            this.UNINFECTED.UseVisualStyleBackColor = true;
+            this.UNINFECTED.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // INFECTED
             // 
-            this.button3.Location = new System.Drawing.Point(30, 315);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "INFECTED";
-            this.button3.UseVisualStyleBackColor = true;
+            this.INFECTED.Location = new System.Drawing.Point(47, 315);
+            this.INFECTED.Name = "INFECTED";
+            this.INFECTED.Size = new System.Drawing.Size(75, 23);
+            this.INFECTED.TabIndex = 11;
+            this.INFECTED.Text = "INFECTED";
+            this.INFECTED.UseVisualStyleBackColor = true;
+            this.INFECTED.Click += new System.EventHandler(this.INFECTED_Click);
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.Location = new System.Drawing.Point(265, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "HOME";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox1.Image = global::corona_window.Properties.Resources.homee;
+            this.pictureBox1.Location = new System.Drawing.Point(304, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Result
             // 
@@ -152,12 +156,12 @@ namespace corona_window
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(338, 410);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.UNINFECTED);
+            this.Controls.Add(this.INFECTED);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.perid);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -166,6 +170,7 @@ namespace corona_window
             this.Controls.Add(this.label1);
             this.Name = "Result";
             this.Text = "Result";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,11 +184,11 @@ namespace corona_window
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox perid;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button UNINFECTED;
+        private System.Windows.Forms.Button INFECTED;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

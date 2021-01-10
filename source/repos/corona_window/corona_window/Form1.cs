@@ -29,12 +29,17 @@ namespace corona_window
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             con.Open();
+          
 
             cmd.Connection = con;
             if (oui.Checked)
             {
-                cmd.CommandText = "insert into person (ID,NAME,CIN,PhoneNumber,Adress,Etatsante) values('" + IDperson.Text + "','" + Nomper.Text + "','" + CINper.Text + "','" + tleper.Text + "','" + adresseper.Text + "','" + "SELECT FROM Dossier  WHERE IDD='" + IDperson.Text + "'" +") ";
+                
+               // cmd.CommandText = "Select Etatsante from [Dossier] WHERE (IDD = '" + IDperson.Text + "')";
+                //cmd.ExecuteNonQuery();
+                cmd.CommandText = "insert into [person] (ID,NAME,CIN,PhoneNumber,Adress,Etatsante) values('" + IDperson.Text + "','" + Nomper.Text + "','" + CINper.Text + "','" + tleper.Text + "','" + adresseper.Text + "',Select Etatsante from[Dossier] WHERE(IDD = '" + IDperson.Text + "'))";
                 cmd.ExecuteNonQuery();
             }
             else if (non.Checked)
@@ -42,8 +47,8 @@ namespace corona_window
                 cmd.CommandText = "insert into [person] (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) values('" + IDperson.Text + "','" + Nomper.Text + "','" + CINper.Text + "','" + tleper.Text + "','" + adresseper.Text + "','" + "Null" + "') ";
                 cmd.ExecuteNonQuery();
             }
+           
 
-            
 
             con.Close();
             MessageBox.Show("done");
