@@ -25,6 +25,7 @@ namespace corona_window
         static SqlDataAdapter ad = new SqlDataAdapter(cmd);
 
 
+
         
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,12 +53,17 @@ namespace corona_window
 
             con.Close();
             MessageBox.Show("done");
+            this.Hide();
+
+            Result Result = new Result();
+            Result.Show();
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+
             Result Result = new Result();
             Result.Show();
            
@@ -65,8 +71,36 @@ namespace corona_window
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             suive suive = new suive();
             suive.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            cmd.Connection = con;
+            cmd.CommandText = "update person set NAME='" +Nomper.Text  + "',CIN='" + CINper.Text + "',PhoneNumber='" + tleper.Text + "',Adresse='" + adresseper.Text + "' where ID='" +IDperson.Text + "' ";
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            //cmd.ExecuteNonQuery();
+
+            MessageBox.Show("update done");
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete person Where ID=@ID)", con);
+
+            cmd.Connection = con;
+            cmd.CommandText = "delete from  person where ID='" + IDperson.Text + "' ";
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            MessageBox.Show("deleted");
         }
     }
 }

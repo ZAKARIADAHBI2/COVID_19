@@ -34,13 +34,15 @@ namespace corona_window
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.testnbr = new System.Windows.Forms.TextBox();
             this.perid = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.UNINFECTED = new System.Windows.Forms.Button();
             this.INFECTED = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rslt = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@ namespace corona_window
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 77);
+            this.label2.Location = new System.Drawing.Point(20, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 2;
@@ -67,7 +69,7 @@ namespace corona_window
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 120);
+            this.label3.Location = new System.Drawing.Point(20, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
@@ -76,7 +78,7 @@ namespace corona_window
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 172);
+            this.label4.Location = new System.Drawing.Point(20, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 4;
@@ -85,43 +87,29 @@ namespace corona_window
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 227);
+            this.label5.Location = new System.Drawing.Point(20, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "NeveauRisqueColor";
             // 
-            // textBox1
+            // testnbr
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 6;
+            this.testnbr.Location = new System.Drawing.Point(141, 70);
+            this.testnbr.Name = "testnbr";
+            this.testnbr.Size = new System.Drawing.Size(138, 20);
+            this.testnbr.TabIndex = 6;
             // 
             // perid
             // 
-            this.perid.Location = new System.Drawing.Point(162, 113);
+            this.perid.Location = new System.Drawing.Point(141, 113);
             this.perid.Name = "perid";
             this.perid.Size = new System.Drawing.Size(138, 20);
             this.perid.TabIndex = 7;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(162, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(162, 224);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 20);
-            this.textBox4.TabIndex = 9;
-            // 
             // UNINFECTED
             // 
-            this.UNINFECTED.Location = new System.Drawing.Point(162, 315);
+            this.UNINFECTED.Location = new System.Drawing.Point(225, 315);
             this.UNINFECTED.Name = "UNINFECTED";
             this.UNINFECTED.Size = new System.Drawing.Size(75, 23);
             this.UNINFECTED.TabIndex = 12;
@@ -150,19 +138,66 @@ namespace corona_window
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.radioButton3.Location = new System.Drawing.Point(257, 223);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(60, 17);
+            this.radioButton3.TabIndex = 16;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Orange";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.Green;
+            this.radioButton2.Location = new System.Drawing.Point(201, 223);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(49, 17);
+            this.radioButton2.TabIndex = 15;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "verte";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.Red;
+            this.radioButton1.Location = new System.Drawing.Point(138, 223);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(57, 17);
+            this.radioButton1.TabIndex = 14;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Rouge";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // rslt
+            // 
+            this.rslt.FormattingEnabled = true;
+            this.rslt.Location = new System.Drawing.Point(141, 164);
+            this.rslt.Name = "rslt";
+            this.rslt.Size = new System.Drawing.Size(138, 21);
+            this.rslt.TabIndex = 17;
+            this.rslt.SelectedIndexChanged += new System.EventHandler(this.rslt_SelectedIndexChanged);
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(338, 410);
+            this.ClientSize = new System.Drawing.Size(344, 381);
+            this.Controls.Add(this.rslt);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UNINFECTED);
             this.Controls.Add(this.INFECTED);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.perid);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.testnbr);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -183,12 +218,14 @@ namespace corona_window
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox testnbr;
         private System.Windows.Forms.TextBox perid;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button UNINFECTED;
         private System.Windows.Forms.Button INFECTED;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ComboBox rslt;
     }
 }
