@@ -1,5 +1,4 @@
-﻿
-namespace corona_window
+﻿namespace corona_window
 {
     partial class Form1
     {
@@ -345,4 +344,3 @@ namespace corona_window
         private System.Windows.Forms.RadioButton radioButton4;
     }
 }
-

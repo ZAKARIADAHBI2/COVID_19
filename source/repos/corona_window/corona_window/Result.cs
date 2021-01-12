@@ -14,13 +14,17 @@ namespace corona_window
 {
     public partial class Result : Form
     {
-       
+
         public Result()
         {
             InitializeComponent();
             rslt.Items.Add("Negative");
             rslt.Items.Add("positive");
             rslt.SelectedIndex = 0;
+            color.Items.Add("Rouge");
+            color.Items.Add("Verte");
+            color.Items.Add("Orange");
+            color.SelectedIndex = 2;
 
         }
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8OVF8BK\SQLEXPRESS;Initial Catalog=prjct;Integrated Security=TrueData Source=DESKTOP-8OVF8BK\SQLEXPRESS;Initial Catalog=Covide;Integrated Security=True");
@@ -35,7 +39,7 @@ namespace corona_window
 
 
             cmd.Connection = con;
-            cmd.CommandText = "INSERT INTO CasNegative(NAME,CIN,PhoneNumber,Adresse,Etatsante) SELECT NAME,CIN,PhoneNumber,Adresse,Etatsante from person where ID='"+perid.Text+"'";
+            cmd.CommandText = "INSERT INTO CasNegative(ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) SELECT ID,NAME,CIN,PhoneNumber,Adresse,Etatsante from person where ID='" + perid.Text + "'";
 
 
             cmd.ExecuteNonQuery();
@@ -44,14 +48,14 @@ namespace corona_window
             con.Close();
             MessageBox.Show("done");
 
-            //insertion to casnegative
-            suive suive = new suive();
-            suive.Show();
+            
+           
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
         }
@@ -62,35 +66,63 @@ namespace corona_window
 
 
             cmd.Connection = con;
-            cmd.CommandText = "INSERT INTO CasNegative(NAME,CIN,PhoneNumber,Adresse,Etatsante,NeveauRisqueColor) SELECT NAME,CIN,PhoneNumber,Adresse,Etatsante from person where ID='" + perid.Text + "'";
+            cmd.CommandText = "INSERT INTO test(TESTnbr,PERID,Result,NeveauRisqueColor,Duree) values('" + testnbr.Text+ "','" + perid.Text + "','" + rslt.Text + "','" + color.Text + "','" + duree.Text + "')";
+            cmd.ExecuteNonQuery();
+
+
+            con.Close();
+            MessageBox.Show("done insert to test");
+
+
+           insertCc();
+
+
+
+
+        }
+        void insertCc()
+        {
+
+            con.Open();
+
+
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT INTO CasConfirmer(ID,NAME,CIN,PhoneNumber,Adresse,Etatsante,NeveauRisqueColor) SELECT ID,NAME,CIN,PhoneNumber,Adresse,Etatsante from person where ID='" + perid.Text + "','" + color.Text + "'";
+
+
             cmd.ExecuteNonQuery();
 
 
             con.Close();
             MessageBox.Show("done");
-
-            //insertion to casnegative
-            suive suive = new suive();
-            suive.Show();
-
-
-         }
-
+        }
         private void rslt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (rslt.SelectedIndex == 0)
             {
-                radioButton1.Enabled = false;
-                radioButton2.Enabled = false;
-                radioButton3.Enabled = false;
+                color.Enabled = false;
+                duree.Enabled = false;
             }
             else
             {
-                radioButton1.Enabled = true;
-                radioButton2.Enabled = true;
-                radioButton3.Enabled = true;
+                color.Enabled = true;
+                duree.Enabled = true;
             }
+        }
+
+        private void upd_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            cmd.Connection = con;
+            cmd.CommandText = "update person set Result='" + rslt.Text + "',NeveauRisqueColor='" + color.Text + "',Duree='" + duree.Text + "' ";
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            //cmd.ExecuteNonQuery();
+
+            MessageBox.Show("update done");
         }
     }
 }

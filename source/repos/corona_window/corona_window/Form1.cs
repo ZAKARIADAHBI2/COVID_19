@@ -18,7 +18,7 @@ namespace corona_window
         {
             InitializeComponent();
 
-            
+
         }
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8OVF8BK\SQLEXPRESS;Initial Catalog=prjct;Integrated Security=TrueData Source=DESKTOP-8OVF8BK\SQLEXPRESS;Initial Catalog=Covide;Integrated Security=True");
         static SqlCommand cmd = new SqlCommand();
@@ -26,19 +26,19 @@ namespace corona_window
 
 
 
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             con.Open();
-          
+
 
             cmd.Connection = con;
             if (oui.Checked)
             {
-                
-               // cmd.CommandText = "Select Etatsante from [Dossier] WHERE (IDD = '" + IDperson.Text + "')";
+
+                // cmd.CommandText = "Select Etatsante from [Dossier] WHERE (IDD = '" + IDperson.Text + "')";
                 //cmd.ExecuteNonQuery();
                 cmd.CommandText = "insert into [person] (ID,NAME,CIN,PhoneNumber,Adress,Etatsante) values('" + IDperson.Text + "','" + Nomper.Text + "','" + CINper.Text + "','" + tleper.Text + "','" + adresseper.Text + "',Select Etatsante from[Dossier] WHERE(IDD = '" + IDperson.Text + "'))";
                 cmd.ExecuteNonQuery();
@@ -48,7 +48,7 @@ namespace corona_window
                 cmd.CommandText = "insert into [person] (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) values('" + IDperson.Text + "','" + Nomper.Text + "','" + CINper.Text + "','" + tleper.Text + "','" + adresseper.Text + "','" + "Null" + "') ";
                 cmd.ExecuteNonQuery();
             }
-           
+
 
 
             con.Close();
@@ -66,7 +66,7 @@ namespace corona_window
 
             Result Result = new Result();
             Result.Show();
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace corona_window
             con.Open();
 
             cmd.Connection = con;
-            cmd.CommandText = "update person set NAME='" +Nomper.Text  + "',CIN='" + CINper.Text + "',PhoneNumber='" + tleper.Text + "',Adresse='" + adresseper.Text + "' where ID='" +IDperson.Text + "' ";
+            cmd.CommandText = "update person set NAME='" + Nomper.Text + "',CIN='" + CINper.Text + "',PhoneNumber='" + tleper.Text + "',Adresse='" + adresseper.Text + "' where ID='" + IDperson.Text + "' ";
             cmd.ExecuteNonQuery();
 
             con.Close();
