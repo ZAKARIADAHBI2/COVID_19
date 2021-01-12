@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\Corona_console.csproj": {}
+    "C:\\Users\\zakaria\\COVID_19\\Corona_console\\Corona_console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\Corona_console.csproj": {
+    "C:\\Users\\zakaria\\COVID_19\\Corona_console\\Corona_console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\Corona_console.csproj",
+        "projectUniqueName": "C:\\Users\\zakaria\\COVID_19\\Corona_console\\Corona_console.csproj",
         "projectName": "Corona_console",
-        "projectPath": "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\Corona_console.csproj",
+        "projectPath": "C:\\Users\\zakaria\\COVID_19\\Corona_console\\Corona_console.csproj",
         "packagesPath": "C:\\Users\\zakaria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zakaria\\source\\repos\\ConsoleApp1\\Corona_console\\obj\\",
+        "outputPath": "C:\\Users\\zakaria\\COVID_19\\Corona_console\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

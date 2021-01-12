@@ -8,6 +8,8 @@ namespace Corona_console
     {
         private string type;
         private Boolean result;
+        private string color;
+        private string Duree;
         public test()
         {
 
@@ -18,6 +20,8 @@ namespace Corona_console
 
         public string Type { get => type; set => type = value; }
         public bool Result { get => result; set => result = value; }
+        public string Color { get => color; set => color = value; }
+        public string Duree1 { get => Duree; set => Duree = value; }
 
         public void timeAnalyse(double AnalyseTime)
         {

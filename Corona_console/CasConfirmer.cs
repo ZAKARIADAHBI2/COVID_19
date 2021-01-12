@@ -1,4 +1,5 @@
-﻿namespace Corona_console
+﻿
+namespace Corona_console
 {
     public class CasConfirmer : test
     {

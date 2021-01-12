@@ -17,7 +17,7 @@ namespace Corona_console
 
         }
         //person table add , update delete
-        public void Addperson(person p1)
+        public void Addperson(person p1, DossierMedical d1)
         {
 
 
@@ -25,23 +25,46 @@ namespace Corona_console
             string connString;
             connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(connString);
-
-            try
+            if (p1.CIN1 == d1.Cin)
             {
-                sqlConnection.Open();
+                try
+                {
+                    sqlConnection.Open();
 
-                cmd.Connection = sqlConnection;
-                cmd.CommandText = "insert into person (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) values('" + p1.Id + "','" + p1.Nom + "','" + p1.CIN1 + "','" + p1.PhoneNumber1 + "','" + p1.Adresse + "','" + p1.Etatsante + "') ";
-                cmd.ExecuteNonQuery();
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandText = "insert into person (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) values('" + p1.Id + "','" + p1.Nom + "','" + p1.CIN1 + "','" + p1.PhoneNumber1 + "','" + p1.Adresse + "','" + d1.EtatSente + "') ";
+                    cmd.ExecuteNonQuery();
 
-                sqlConnection.Close();
+                    sqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.ToString());
+                }
+
             }
-            catch (Exception ex)
+            //person doesn't have D.M
+            else
             {
+                
 
-                Console.WriteLine(ex.ToString());
+                try
+                {
+                    sqlConnection.Open();
+
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandText = "insert into person (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante) values('" + p1.Id + "','" + p1.Nom + "','" + p1.CIN1 + "','" + p1.PhoneNumber1 + "','" + p1.Adresse + "','" + null + "') ";
+                    cmd.ExecuteNonQuery();
+
+                    sqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.ToString());
+                }
             }
-
         }
         public void editperson(person p1)
         {
@@ -54,7 +77,7 @@ namespace Corona_console
             try
             {
                 sqlConnection.Open();
-                /*'" + txtID.Text + "','" + Nametxt.Text + "','" + agetxt.Text + "','" + adtxt.Text + "','" + citytxt.Text + "'*/
+                
                 cmd.Connection = sqlConnection;
                 cmd.CommandText = "update person set NAME='" + p1.Nom + "',CIN='" + p1.CIN1 + "',PhoneNumber='" + p1.PhoneNumber1 + "',Adresse='" + p1.PhoneNumber1 + "',Etatsante='" + p1.Etatsante + "')";
                 cmd.ExecuteNonQuery();
@@ -237,93 +260,14 @@ namespace Corona_console
             }
         }
         //ADD contacts
-        public void addcontact(contacts cnc1)
-        {
-
-            SqlCommand cmd = new SqlCommand();
-            string connString;
-            connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
-            SqlConnection sqlConnection = new SqlConnection(connString);
-
-            try
-            {
-                sqlConnection.Open();
-
-                cmd.Connection = sqlConnection;
-                cmd.CommandText = "insert into contacts (ID,NAME,CIN,PhoneNumber,Adresse,Etatsante,NeveauRisqueColor) values('" + cnc1.Id + "','" + cnc1.Nom + "','" + cnc1.CIN1 + "','" + cnc1.PhoneNumber1 + "','" + cnc1.Adresse + "','" + cnc1.Etatsante + "','" + cnc1.NeveauRisque1 + "') ";
-                cmd.ExecuteNonQuery();
-
-                sqlConnection.Close();
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.ToString());
-            }
-
-        }
-        //update contacts
-        public void updatecontact(contacts cnc1)
-        {
-            SqlCommand cmd = new SqlCommand();
-            string connString;
-            connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
-            SqlConnection sqlConnection = new SqlConnection(connString);
-            try
-            {
-                sqlConnection.Open();
-
-                cmd.Connection = sqlConnection;
-                cmd.CommandText = "update contacts set NAME='" + cnc1.Nom + "',CIN='" + cnc1.CIN1 + "',PhoneNumber='" + cnc1.PhoneNumber1 + "',Adresse='" + cnc1.PhoneNumber1 + "',Etatsante='" + cnc1.Etatsante + "',NeveauRisqueColor='" + cnc1.NeveauRisque1 + "')";
-                cmd.ExecuteNonQuery();
-
-
-                sqlConnection.Close();
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.ToString());
-
-            }
-        }
-        //delete contact
-        public void deletecnc(contacts cnc1)
-        {
-
-            string connString;
-            connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
-            // create Sqlconnection object
-            SqlConnection sqlConnection = new SqlConnection(connString);
-
-            try
-            {
-                sqlConnection.Open();
-
-                SqlCommand cmd = new SqlCommand("Delete contacts  Where ID=@ID)", sqlConnection);
-
-                cmd.Connection = sqlConnection;
-                cmd.CommandText = "delete from  CasConfirmer where ID='" + cnc1.Id + "' ";
-                cmd.ExecuteNonQuery();
-
-
-                sqlConnection.Close();
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.ToString());
-            }
-        }
         //add casnegative
         public void addcasnegative(CasNegative casn)
         {
             test t1 = new test();
-            //false meqns negative
+            //false means negative
             if (t1.Result == false)
             {
-                if (t1.Result == true)
-                {
+                
                     SqlCommand cmd = new SqlCommand();
                     string connString;
                     connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
@@ -344,7 +288,7 @@ namespace Corona_console
 
                         Console.WriteLine(ex.ToString());
                     }
-                }
+                
 
             }
         }
@@ -400,8 +344,60 @@ namespace Corona_console
                 Console.WriteLine(ex.ToString());
             }
         }
+        void suive(test t1)
+        {
+            string connString;
+            connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
+            // create Sqlconnection object
+            SqlConnection sqlConnection = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                sqlConnection.Open();
+
+
+                cmd.Connection = sqlConnection;
+                cmd.CommandText = "select PERID,Result,NeveauRisqueColor,Duree from test where PERID ='" + t1.Id + "'";
+                cmd.ExecuteNonQuery();
+
+
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+        }
+            void updateCass(test t1)
+            {
+                SqlCommand cmd = new SqlCommand();
+                string connString;
+                connString = ConfigurationManager.ConnectionStrings["Dbcon"].ConnectionString;
+                SqlConnection sqlConnection = new SqlConnection(connString);
+                try
+                {
+                    sqlConnection.Open();
+
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandText = "update test set Result='" + t1.Result + "',NeveauRisqueColor='" + t1.Color + "',Duree='" + t1.Duree1 + "')";
+                    cmd.ExecuteNonQuery();
+
+
+                    sqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.ToString());
+
+                }
+            }
+
+        }
     } 
-}
+
 
 
 
